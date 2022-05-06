@@ -6,7 +6,6 @@
   height: 40vmin;
   pointer-events: none;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -20,9 +19,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(5px + 2vmin);
+  color: rgb(255, 255, 255);
 }
+
 
 .App-link {
   color: #61dafb;
@@ -35,4 +35,136 @@
   to {
     transform: rotate(360deg);
   }
+}
+.logoimg {
+  border-radius: 50%;
+  border: none;
+  background: rgb(39, 35, 35);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+	top: 0; left: 0; right: 0; bottom: 0;
+	margin: auto;
+	background-image: url(./Logoframes/1.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 400px;
+	height: 400px;
+
+}
+
+.logoimg:hover {
+  animation: giffy .7s 0s 1;
+  
+}
+.starwars{
+  padding:2rem;
+  transition: transform 250ms;
+}
+.starwars:hover{
+  transform: translateY(-10px);
+}
+.starwars-data{
+  color:yellow;
+}
+.starwars-data p{
+  font-size:medium;
+}
+.starwars-data ul{
+  text-align: left;
+}
+.front {
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.pushable {
+  background: hsl(60deg 100% 37%);
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  cursor: pointer;
+}
+.front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: hsl(70deg 100% 37%);
+  color: white;
+  transform: translateY(-4px);
+}
+.homeworld-link a{
+  background-image: linear-gradient(
+    to right,
+    #cdd654,
+    #cdd654 50%,
+    yellow 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.homeworld-link a:before{
+  content: '';
+  background: #cdd654;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.homeworld-link a:hover{
+  background-position: 0;
+}
+a:hover::before{
+  width:100%;
+}
+.pushable:hover .front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+.pushable:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+@keyframes giffy {
+	0%   { background-image: url(./Logoframes/1.gif); }
+  5%   { background-image: url(./Logoframes/2.gif); } 
+  10%  { background-image: url(./Logoframes/3.gif); }  
+	15%  { background-image: url(./Logoframes/4.gif); }
+  20%  { background-image: url(./Logoframes/5.gif); }
+  25%  { background-image: url(./Logoframes/6.gif); }
+	30%  { background-image: url(./Logoframes/7.gif); }
+  35%  { background-image: url(./Logoframes/8.gif); }
+  40%  { background-image: url(./Logoframes/9.gif); }
+	45%  { background-image: url(./Logoframes/10.gif); }
+  50%  { background-image: url(./Logoframes/11.gif); }
+  55%  { background-image: url(./Logoframes/12.gif); }
+	60%  { background-image: url(./Logoframes/13.gif); }
+  65%  { background-image: url(./Logoframes/14.gif); }
+  70%  { background-image: url(./Logoframes/15.gif); }
+	75%  { background-image: url(./Logoframes/16.gif); }
+  80%  { background-image: url(./Logoframes/17.gif); }
+  85%  { background-image: url(./Logoframes/18.gif); }
+	90%  { background-image: url(./Logoframes/19.gif); }
+	100% { background-image: url(./Logoframes/20.gif); }
 }
