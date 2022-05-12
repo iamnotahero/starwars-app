@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/starwars-app/static/css/main.ca792f38.css",
+    "main.js": "/starwars-app/static/js/main.96ce6b05.js",
+    "static/js/845.34aa38cc.chunk.js": "/starwars-app/static/js/845.34aa38cc.chunk.js",
+    "static/js/787.0f7b0e7f.chunk.js": "/starwars-app/static/js/787.0f7b0e7f.chunk.js",
+    "static/media/SwordEffects.mp3": "/starwars-app/static/media/SwordEffects.756c6b9a7bd6ff78729d.mp3",
+    "static/media/14.gif": "/starwars-app/static/media/14.168c6f0e6b50a6a48f25.gif",
+    "static/media/17.gif": "/starwars-app/static/media/17.1edf8c85f4857c0ffc11.gif",
+    "static/media/18.gif": "/starwars-app/static/media/18.f395a64be24e9d000f65.gif",
+    "static/media/6.gif": "/starwars-app/static/media/6.1dbaef007a11f2c487ee.gif",
+    "static/media/20.gif": "/starwars-app/static/media/20.83ca79024669a3f43f4d.gif",
+    "static/media/16.gif": "/starwars-app/static/media/16.31bd8f58df3d1787a286.gif",
+    "static/media/19.gif": "/starwars-app/static/media/19.1941a55c42b3a7815c9e.gif",
+    "static/media/9.gif": "/starwars-app/static/media/9.a5d570fdf8e0484bf9bf.gif",
+    "static/media/15.gif": "/starwars-app/static/media/15.3202fdf7e559f84af875.gif",
+    "static/media/13.gif": "/starwars-app/static/media/13.7cceddf7ebbd6dede33d.gif",
+    "static/media/10.gif": "/starwars-app/static/media/10.5234b269fecb6921960d.gif",
+    "static/media/8.gif": "/starwars-app/static/media/8.60fe2d04f39ddc50b424.gif",
+    "static/media/12.gif": "/starwars-app/static/media/12.7e18e0a15ad8d431b217.gif",
+    "static/media/11.gif": "/starwars-app/static/media/11.9723d856022915a9dec4.gif",
+    "static/media/7.gif": "/starwars-app/static/media/7.cc1639b6cf0a37585bb8.gif",
+    "static/media/buttonclick.mp3": "/starwars-app/static/media/buttonclick.19e9ba07b0f81496b887.mp3",
+    "index.html": "/starwars-app/index.html",
+    "main.ca792f38.css.map": "/starwars-app/static/css/main.ca792f38.css.map",
+    "main.96ce6b05.js.map": "/starwars-app/static/js/main.96ce6b05.js.map",
+    "845.34aa38cc.chunk.js.map": "/starwars-app/static/js/845.34aa38cc.chunk.js.map",
+    "787.0f7b0e7f.chunk.js.map": "/starwars-app/static/js/787.0f7b0e7f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca792f38.css",
+    "static/js/main.96ce6b05.js"
+  ]
+}
