@@ -1,7 +1,19 @@
 .App {
-  text-align: center;
+text-align: center;
 }
-
+.main{
+  animation: 1s ease-out 0s 1 slide-in;
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.25;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,14 +25,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  font-size: calc(5px + 2vmin);
+  color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(5px + 2vmin);
-  color: rgb(255, 255, 255);
 }
 
 
@@ -36,6 +47,16 @@
     transform: rotate(360deg);
   }
 }
+.title {
+  animation: slide-in 1000ms;
+  animation-delay: 500ms;
+  animation-fill-mode: backwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*
 .logoimg {
   border-radius: 50%;
   border: none;
@@ -43,59 +64,157 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
-	top: 0; left: 0; right: 0; bottom: 0;
-	margin: auto;
-	background-image: url(./Logoframes/1.gif);
-	background-repeat: no-repeat;
-	background-position: center;
+	background-image: url(./Logoframes/20.gif);
 	width: 400px;
 	height: 400px;
 
 }
-
-.logoimg:hover {
-  animation: giffy .7s 0s 1;
-  
+*/
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
 }
-.starwars{
+
+:root {
+  --card-height: 25vh;
+  --card-width: calc(var(--card-height) / 1);
+}
+
+
+body {
+  min-height: 100vh;
+  background: #282c34;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+
+.card {
+  background-color: #282c34;
+
+  width: var(--card-width);
+  height: var(--card-height);
+  border-radius: 50%;
+  padding: 3px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+  font-family: cursive;
+}
+
+.card:hover {
+  color: rgb(160, 189, 34);
+  transition: color 1s;
+}
+.card:hover:after{
+  animation: none;
+  opacity: 0;
+}
+
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    var(--rotate)
+    ,  #685dff, #08ec00 43%, #7e2ac2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+  border-radius: 30%;
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #685dff, #08ec00 43%, #50068b);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
+
+
+.starwars-text{
   padding:2rem;
   transition: transform 250ms;
+  
 }
-.starwars:hover{
+.starwars-text:hover{
+
   transform: translateY(-10px);
 }
+.starwars-text:after{
+  border-radius: 30%;
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 50%;
+  width: 45%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 2));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #1adf13, #3514c9 43%, #b275e4);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+.starwars-text:hover:after{
+  animation: none;
+  opacity: 0;
+}
+
 .starwars-data{
+  animation: 1s ease-out 0s 1 slide-in;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color:yellow;
 }
 .starwars-data p{
   font-size:medium;
 }
-.starwars-data ul{
-  text-align: left;
-}
-.front {
-  transition:
-    transform
-    600ms
-    cubic-bezier(.3, .7, .4, 1);
-}
 
-.pushable {
-  background: hsl(60deg 100% 37%);
-  border: none;
-  border-radius: 12px;
-  padding: 0;
-  cursor: pointer;
-}
-.front {
-  display: block;
-  padding: 12px 42px;
-  border-radius: 12px;
-  font-size: 1.25rem;
-  background: hsl(70deg 100% 37%);
-  color: white;
-  transform: translateY(-4px);
-}
 .homeworld-link a{
   background-image: linear-gradient(
     to right,
@@ -131,6 +250,35 @@
 a:hover::before{
   width:100%;
 }
+.affiliations-items{
+
+}
+
+.front {
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.pushable {
+  background: hsl(60deg 100% 37%);
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  margin: 1rem;
+  cursor: pointer;
+}
+.front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: hsl(70deg 100% 37%);
+  color: white;
+  transform: translateY(-4px);
+}
+
 .pushable:hover .front {
   transform: translateY(-6px);
   transition:
@@ -167,4 +315,59 @@ a:hover::before{
   85%  { background-image: url(./Logoframes/18.gif); }
 	90%  { background-image: url(./Logoframes/19.gif); }
 	100% { background-image: url(./Logoframes/20.gif); }
+}
+.align{
+  position: relative;
+  min-width: 500px;
+  left: 0%;
+  top: 0%;
+  transform: translate(0, 10%);
+  z-index: 1;
+}
+
+.saber{
+  width: 12px;
+  height: 250px;
+  background:#fff;
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+.sabers{
+  display: flex;
+  justify-content:space-around;
+
+  position: absolute;
+    width: 700px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+.saber-blue.saber {
+    background: rgb(4, 62, 119);
+    box-shadow: dodgerblue 0px 0px 11px 0px;
+}
+.saber-green.saber {
+  margin-left: 600px;
+    background: #22ab28;
+    box-shadow: #22ab28 0px 0px 11px 0px;
+}
+.saber-red.saber {
+    background: #B71C1C;
+    box-shadow: #B71C1C 0px 0px 11px 0px;
+}
+
+.punho{
+  
+  width: 11px;
+  height: 30px;
+  background:#263238;
+  border: 2px solid #252121d6;
+  border-radius: 0px 0px 1px 1px;
+}
+.button{
+  width: 3px;
+  height: 3px;
+  background:#B71C1C;
+  border-radius: 50%;
 }
